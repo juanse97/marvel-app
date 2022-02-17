@@ -11,18 +11,11 @@ import { HeroesService } from './services/heroes.service';
 })
 export class HomeComponent implements OnInit {
 
-  characters: Characters[] = [];
-  characters$: Subscription = new Subscription;
 
-  constructor(private _charactersService: HeroesService) { }
 
-  ngOnInit(): void {
+  constructor() { }
 
-    this.characters$ = this._charactersService
-      .getCharacters()
-      .subscribe((resp: Welcome) => {
-        this.characters = [...resp.data.results]
-      })
-  }
+  ngOnInit(): void { }
+
 
 }

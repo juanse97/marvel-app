@@ -1,17 +1,21 @@
 <div class="container">
   <nz-tabset>
     <nz-tab nzTitle="Super Heroes">
-      <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username"
-          aria-describedby="button-addon2">
-        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+      <div class="content-search">
+        <nz-input-group nzSearch [nzAddOnAfter]="suffixIconButton">
+          <input type="text" [(ngModel)]="inputValue" nz-input placeholder="Buscar por nombre" />
+        </nz-input-group>
+        <ng-template #suffixIconButton>
+          <button nz-button nzType="primary" (click)="search()" nzSearch><i nz-icon nzType="search"
+              nzTheme="outline"></i></button>
+        </ng-template>
       </div>
-      <div>
-        <div class="card mb-3" *ngFor="let character of charactersTabs" style="max-width: 100%;">
+      <div class="content-result">
+        <div class="card mb-3" *ngFor="let character of charactersList" style="max-width: 100%;">
           <div class="row g-0">
             <div class="col-md-3">
-              <img class="character-thumbnail" [src]="character.thumbnail.path + '.' + character.thumbnail.extension"
-                alt="" width="200px" height="auto" srcset="">
+              <img class="character-thumbnail" [src]="character | images" [alt]="character.name" width="200px"
+                height="auto">
             </div>
             <div class="col-md-9">
               <div class="card-body">
