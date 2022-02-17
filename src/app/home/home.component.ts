@@ -11,6 +11,10 @@ export class HomeComponent implements OnInit {
   images: any;
   imagesList: Characters[] = [];
 
+  isVisible = false;
+  isConfirmLoading = false;
+  infomodalList:any;
+
   constructor() { }
 
   ngOnInit(): void { }
@@ -19,6 +23,26 @@ export class HomeComponent implements OnInit {
     this.images = localStorage.getItem("charactersIdList")
     this.images = JSON.parse(this.images)
     this.imagesList = this.images
+  }
+
+  showModal(id: number) {
+
+    let infomodal: Characters[] = [];
+    this.isVisible = true;
+    infomodal = this.imagesList.filter(character => character.id === id);
+    this.infomodalList = infomodal[0];
+  }
+
+  handleOk(): void {
+    this.isConfirmLoading = true;
+    setTimeout(() => {
+      this.isVisible = false;
+      this.isConfirmLoading = false;
+    }, 1000);
+  }
+
+  handleCancel(): void {
+    this.isVisible = false;
   }
 
 

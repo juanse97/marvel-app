@@ -5,7 +5,10 @@
                 <div class="col-md-3">
                     <h2 class="text-center">Super herores guardados</h2>
                     <div *ngFor="let image of imagesList">
-                        <img [src]="image | images" [alt]="image.name" width="200px" height="auto">
+                        <a (click)="showModal(image.id)">
+                            <img class="image-heroe" [src]="image | images" [alt]="image.name" width="200px"
+                                height="auto">
+                        </a>
                     </div>
                     <div class="mesagge">
                         <h5 *ngIf="!imagesList.length" class="text-center">Aún no haz guardado ningun super heroe :(
@@ -19,3 +22,28 @@
         </section>
     </div>
 </main>
+
+<!-- Modal -->
+<nz-modal [(nzVisible)]="isVisible" [nzTitle]="modalTitle" [nzContent]="modalContent" [nzFooter]="modalFooter"
+    (nzOnCancel)="handleCancel()">
+    <ng-template #modalTitle>{{infomodalList.name}}</ng-template>
+
+    <ng-template #modalContent>
+        <h5>Despción</h5>
+        <p>{{infomodalList.description ? infomodalList.description : 'No hay descripción disponible'}}</p>
+        <h5>Comics</h5>
+        <ul>
+            <li *ngFor="let comic of infomodalList.comics.items">
+                <a [href]="comic.resourceURI">{{ comic.name}}</a>
+            </li>
+        </ul>
+
+    </ng-template>
+
+    <ng-template #modalFooter>
+        <h5 class="text-center">Ver enlaces relacionados</h5>
+        <div class="buttons-modal">
+            <a class="btn" *ngFor="let url of infomodalList.urls" [href]="url.url" target="_blank">{{url.type}}</a>
+        </div>
+    </ng-template>
+</nz-modal>

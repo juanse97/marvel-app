@@ -34,6 +34,10 @@
     </nz-tab>
     <nz-tab nzTitle="Super Heroes Guardados">
       <div class="content-result-save">
+        <div class="mesagge">
+          <h5 *ngIf="!charactersIdList.length" class="text-center">Aún no haz guardado ningun super heroe :(
+          </h5>
+      </div>
         <div class="card mb-3" *ngFor="let character of charactersIdList" style="max-width: 100%;">
           <div class="row g-0">
             <div class="col-md-3">

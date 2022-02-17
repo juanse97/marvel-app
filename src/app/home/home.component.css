@@ -1,0 +1,13 @@
+.image-heroe {
+    display: block;
+    margin: 10px auto;
+}
+.buttons-modal{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.buttons-modal a {
+    background-color: aqua;
+    color: #ffff;
+}
