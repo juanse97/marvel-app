@@ -1,0 +1,28 @@
+<div class="container">
+  <nz-tabset>
+    <nz-tab nzTitle="Super Heroes">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username"
+          aria-describedby="button-addon2">
+        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+      </div>
+      <div>
+        <div class="row" *ngFor="let character of charactersTabs">
+          <div class="col-md-3">
+            <img class="character-thumbnail" [src]="character.thumbnail.path + '.' + character.thumbnail.extension" alt="" width="200px" height="auto" srcset="">
+          </div>
+          <div class="col-md-6">
+            <h3>{{character.name}}</h3>
+            <p>{{character.description ? character.description : 'No hay descripción disponible'}}</p>
+            <a [href]="character.urls[1].url" target="_blank" rel="noopener noreferrer">Leer más</a>
+            {{character.urls[1].type}}
+          </div>
+          <div class="col-md-3">
+            <button class="btn btn">Agregar</button>
+          </div>
+        </div>
+      </div>
+    </nz-tab>
+    <nz-tab nzTitle="Super Heroes Guardados">Content of Tab Pane 2</nz-tab>
+  </nz-tabset>
+</div>
