@@ -24,12 +24,33 @@
                 </p>
                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                 <a [href]="character.urls[1].url" target="_blank">Leer más</a>
+                <button nz-button nzType="primary" (click)="add(character.id)" nzSearch><i nz-icon nzType="plus-circle"
+                    nzTheme="fill"></i></button>
               </div>
             </div>
           </div>
         </div>
       </div>
     </nz-tab>
-    <nz-tab nzTitle="Super Heroes Guardados">Content of Tab Pane 2</nz-tab>
+    <nz-tab nzTitle="Super Heroes Guardados">
+      <div class="content-result-save">
+        <div class="card mb-3" *ngFor="let character of charactersIdList" style="max-width: 100%;">
+          <div class="row g-0">
+            <div class="col-md-3">
+              <img class="character-thumbnail" [src]="character | images" [alt]="character.name" width="200px"
+                height="auto">
+            </div>
+            <div class="col-md-9">
+              <div class="card-body">
+                <h5 class="card-title">{{character.name}}</h5>
+                <p class="card-text">{{character.description ? character.description : 'No hay descripción disponible'}}
+                </p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nz-tab>
   </nz-tabset>
 </div>

@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
 import { Characters } from './interfaces/characters.interfaces';
-import { Welcome } from './interfaces/welcome.interface';
-import { HeroesService } from './services/heroes.service';
 
 @Component({
   selector: 'app-home',
@@ -11,11 +8,18 @@ import { HeroesService } from './services/heroes.service';
 })
 export class HomeComponent implements OnInit {
 
-
+  images: any;
+  imagesList: Characters[] = [];
 
   constructor() { }
 
   ngOnInit(): void { }
+
+  GetImagesLocalStorage() {
+    this.images = localStorage.getItem("charactersIdList")
+    this.images = JSON.parse(this.images)
+    this.imagesList = this.images
+  }
 
 
 }

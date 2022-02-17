@@ -7,9 +7,11 @@ import { NzTabsModule } from 'ng-zorro-antd/tabs';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzModalModule } from 'ng-zorro-antd/modal';
 import { SearchOutline } from '@ant-design/icons-angular/icons';
+import { PlusCircleFill } from '@ant-design/icons-angular/icons';
 import { IconDefinition } from '@ant-design/icons-angular';
-const icons: IconDefinition[] = [SearchOutline];
+const icons: IconDefinition[] = [SearchOutline, PlusCircleFill];
 
 
 import { ImagesPipe } from './pipes/images.pipe';
@@ -31,6 +33,7 @@ import { TabsComponent } from './components/tabs/tabs.component';
     NzTabsModule,
     NzInputModule,
     NzButtonModule,
+    NzModalModule,
     NzIconModule,
     NzIconModule.forChild(icons),
   ]
