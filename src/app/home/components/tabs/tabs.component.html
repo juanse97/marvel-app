@@ -7,18 +7,21 @@
         <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
       </div>
       <div>
-        <div class="row" *ngFor="let character of charactersTabs">
-          <div class="col-md-3">
-            <img class="character-thumbnail" [src]="character.thumbnail.path + '.' + character.thumbnail.extension" alt="" width="200px" height="auto" srcset="">
-          </div>
-          <div class="col-md-6">
-            <h3>{{character.name}}</h3>
-            <p>{{character.description ? character.description : 'No hay descripción disponible'}}</p>
-            <a [href]="character.urls[1].url" target="_blank" rel="noopener noreferrer">Leer más</a>
-            {{character.urls[1].type}}
-          </div>
-          <div class="col-md-3">
-            <button class="btn btn">Agregar</button>
+        <div class="card mb-3" *ngFor="let character of charactersTabs" style="max-width: 100%;">
+          <div class="row g-0">
+            <div class="col-md-3">
+              <img class="character-thumbnail" [src]="character.thumbnail.path + '.' + character.thumbnail.extension"
+                alt="" width="200px" height="auto" srcset="">
+            </div>
+            <div class="col-md-9">
+              <div class="card-body">
+                <h5 class="card-title">{{character.name}}</h5>
+                <p class="card-text">{{character.description ? character.description : 'No hay descripción disponible'}}
+                </p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <a [href]="character.urls[1].url" target="_blank">Leer más</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
