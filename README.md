@@ -12,6 +12,6 @@ Correr `npm install` Para la intalación de todos los paquetes necesarios para l
 
 ## Ejecuón del servidor de desarrollo
 
-Correr `ng serve` Para iniciar el servidor de desarrollo. Navegar a `http://localhost:4200/`. La aplicación se recargará automáticamente si cambia alguno de los archivos de origen.
+Correr `ng serve -o` Para iniciar el servidor de desarrollo. Navegar a `http://localhost:4200/`. La aplicación se recargará automáticamente si cambia alguno de los archivos de origen.
 
 
