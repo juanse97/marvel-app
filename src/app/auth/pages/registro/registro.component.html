@@ -1,25 +1,28 @@
 <main role="main">
     <div class="container content">
         <div class="login-form">
-            <form>
+            <form nz-form (ngSubmit)="signIn(formSignIn)" #formSignIn="ngForm">
                 <h2 class="title text-center">Registrarse</h2>
                 <div class="form-group">
-                    <div class="input-group">
-                        <input type="text" class="form-control" [(ngModel)]="data.name" name="name" placeholder="Nombre" required="required">
-                    </div>
+                    <input type="text" class="form-control" [(ngModel)]="data.name" name="namePerson" placeholder="Nombre" required="required" namePerson>
+                    <span *ngIf="formSignIn.submitted && formSignIn.controls['namePerson'].errors" class="text-danger">
+                        <small><i nz-icon nzType="warning" nzTheme="outline"></i> Ingresa un nombre</small>
+                    </span>
                 </div>
                 <div class="form-group">
-                    <div class="input-group">
-                        <input type="text" class="form-control" [(ngModel)]="data.email" name="email" placeholder="Correo" required="required">
-                    </div>
+                        <input type="text" class="form-control" [(ngModel)]="data.email" name="email" placeholder="Correo" required="required" email>
+                        <span *ngIf="formSignIn.submitted && formSignIn.controls['email'].errors" class="text-danger">
+                            <small><i nz-icon nzType="warning" nzTheme="outline"></i> Ingresa un correo</small>
+                        </span>
                 </div>
                 <div class="form-group">
-                    <div class="input-group">
-                        <input type="password" class="form-control" [(ngModel)]="data.password" name="password" placeholder="Contraseña" required="required">
-                    </div>
+                    <input type="password" class="form-control" [(ngModel)]="data.password" name="password" placeholder="Contraseña" required="required" password>
+                    <span *ngIf="formSignIn.submitted && formSignIn.controls['password'].errors" class="text-danger">
+                        <small><i nz-icon nzType="warning" nzTheme="outline"></i> Ingresa una contaseña</small>
+                    </span>
                 </div>
                 <div class="form-group d-grid gap-2">
-                    <button type="submit" (click)="signIn()" class="btn btn-success">Registrase</button>
+                    <button type="submit" class="btn btn-success">Registrase</button>
                 </div>
             </form>
         </div>

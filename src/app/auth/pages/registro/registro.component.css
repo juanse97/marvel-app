@@ -21,3 +21,6 @@
 .form-group {
     margin: 10px 0;
 }
+::ng-deep i.anticon.anticon-warning{
+    display: inline-flex;
+}
