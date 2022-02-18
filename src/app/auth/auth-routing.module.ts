@@ -12,6 +12,10 @@ const routes: Routes = [
         component: LoginComponent
       },
       {
+        path: '',
+        redirectTo: 'registro'
+      },
+      {
         path: 'registro',
         component: RegistroComponent
       }
