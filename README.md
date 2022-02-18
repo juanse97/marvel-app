@@ -8,7 +8,7 @@ Correr `npm install -g @angular/cli` Para instalar Angular de forma global
 
 ## Instalación de dependencias
 
-Correr `npm install` Para la intalación de todos los paquetes necesarios para la ejecuón del proyecto
+Correr `npm install` Para la instalación de todos los paquetes necesarios para la ejecuón del proyecto
 
 ## Ejecuón del servidor de desarrollo
 
