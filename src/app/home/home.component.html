@@ -3,6 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3">
+                <!-- Imágenes super héroes -->
                 <section>
                     <h2 class="text-center">Mis Super héroes</h2>
                     <div *ngFor="let image of imagesList">
@@ -12,12 +13,14 @@
                         </a>
                     </div>
                     <div class="mesagge">
-                        <h5 *ngIf="!imagesList.length" class="text-center">Aún no has guardado super héroe.
+                        <h5 *ngIf="!imagesList.length" class="text-center">Aún no has guardado un super héroe.
                         </h5>
                     </div>
                 </section>
+                <!-- Fin Imágenes super héroes -->
             </div>
             <div class="col-md-9">
+                <!-- Tabs -->
                 <app-tabs></app-tabs>
             </div>
         </div>
