@@ -16,11 +16,12 @@ export class HeroesService {
   private hash: string = "982e8f459066701df80f3f28b11b30c3"
 
   constructor(private http: HttpClient) { }
-
+  //Consulta general de personajes
   getCharacters(): Observable<Welcome> {
     return this.http.get<Welcome>(`${this.baseUrl}v1/public/characters?ts=${this.ts}&apikey=${this.key}&hash=${this.hash}`);
   }
-  getCharactersId(id:number): Observable<Welcome> {
+  //Consulta personaje por ID
+  getCharactersId(id: number): Observable<Welcome> {
     return this.http.get<Welcome>(`${this.baseUrl}v1/public/characters/${id}?ts=${this.ts}&apikey=${this.key}&hash=${this.hash}`);
   }
 }

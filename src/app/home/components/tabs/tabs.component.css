@@ -5,3 +5,10 @@
     display: flex;
     justify-content: center;
 }
+.content-btn {
+    display: flex;
+    justify-content: flex-end;
+}
+::ng-deep.ant-btn.ant-btn-primary i {
+    display: inline-flex;
+}

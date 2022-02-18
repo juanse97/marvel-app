@@ -5,9 +5,10 @@
 .buttons-modal{
     display: flex;
     justify-content: space-evenly;
+    margin: 20px 0;
 }
 
 .buttons-modal a {
-    background-color: aqua;
+    background-color: #1890ff;
     color: #ffff;
 }

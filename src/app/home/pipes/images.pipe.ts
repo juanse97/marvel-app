@@ -8,7 +8,8 @@ export class ImagesPipe implements PipeTransform {
 
   transform(characters: Characters): string {
 
-    return `${ characters.thumbnail.path }.${ characters.thumbnail.extension }`;
+    //Creación de ruta de imagen
+    return `${characters.thumbnail.path}.${characters.thumbnail.extension}`;
   }
 
 }

@@ -19,15 +19,21 @@ export class LoginComponent implements OnInit {
   }
 
   signUp() {
+    // Obtener información LS
     this.registeredUsers = localStorage.getItem("signIn")
-    this.registeredUsers = JSON.parse(this.registeredUsers)
-    this.user = this.registeredUsers;
-    if ((this.user.find(user => user.email === this.data.email)) && ((this.user.find(user => user.password === this.data.password)))) {
-      this.router.navigate(['/heroes'])
+    // Valadar si existen usuarios
+    if (this.registeredUsers != null) {
+      // Formato JSON
+      this.registeredUsers = JSON.parse(this.registeredUsers)
+      this.user = this.registeredUsers;
+      // Validación Inicio de sesión
+      if ((this.user.find(user => user.email === this.data.email)) && ((this.user.find(user => user.password === this.data.password)))) {
+        this.router.navigate(['/heroes'])
+      } else {
+        alert('credenciales incorrectas')
+      }
     } else {
-      console.log('NO')
+      alert('Usuario no registrado')
     }
-
   }
-
 }

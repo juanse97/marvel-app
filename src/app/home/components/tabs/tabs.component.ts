@@ -57,16 +57,22 @@ export class TabsComponent implements OnInit {
   }
 
   setLocalStorage(id: number) {
+    //Validación personaje existente
     if (this.charactersIdList.find(characterId => characterId.id === id)) {
+      //Generación de modal
       this.createModalError();
     } else {
+      //Almacenamiento de data
       this.charactersIdList.push(this.charactersId[0])
+      //Envio de data a LS
       localStorage.setItem('charactersIdList', JSON.stringify(this.charactersIdList));
+      //Generación de modal
       this.createModalSuccess();
+      //Ejecucón de func de mostrar imagenes
       this.comp.GetImagesLocalStorage();
     }
   }
-
+  // Modals
   createModalError(): void {
     this._modal.error({
       nzTitle: 'No puedes agregar este super herore',
