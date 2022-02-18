@@ -1,3 +1,8 @@
-<nav class="navbar navbar-dark bg-dark justify-content-center mb-4">
-    <h4 class="text-center text-white">¡Bienvenido {{user[0].name}}!</h4>
+<nav class="navbar navbar-dark bg-dark mb-4">
+    <div class="container">
+        <h4 class="text-white">¡Bienvenido {{user[0].name}}!</h4>
+        <a class="login" [routerLink]="['/login']">
+            <h6 class="text-white">Login</h6>
+        </a>
+    </div>
 </nav>
