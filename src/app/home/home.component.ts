@@ -8,9 +8,11 @@ import { Characters } from './interfaces/characters.interfaces';
 })
 export class HomeComponent implements OnInit {
 
+  // Imagenes
   images: any;
   imagesList: Characters[] = [];
 
+  // Info modals
   isVisible = false;
   isConfirmLoading = false;
   infomodalList: any;

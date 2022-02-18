@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { SignInModel } from '../models/signIn.model';
+import { SignInModel } from '../../models/signIn.model';
 
 @Component({
   selector: 'app-registro',
