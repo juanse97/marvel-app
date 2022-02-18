@@ -5,16 +5,16 @@
                 <h2 class="title text-center">Iniciar sesión</h2>
                 <div class="form-group">
                     <div class="input-group">
-                        <input type="text" class="form-control" name="email" placeholder="Correo" >
+                        <input type="text" class="form-control" [(ngModel)]="data.email" name="email" placeholder="Correo" required="required">
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="input-group">
-                        <input type="password" class="form-control" name="password" placeholder="Contraseña">
+                        <input type="password" class="form-control" [(ngModel)]="data.password" name="password" placeholder="Contraseña" required="required">
                     </div>
                 </div>
                 <div class="form-group d-grid gap-2">
-                    <button type="submit" (click)="login()" class="btn btn-success">Iniciar sesión</button>
+                    <button type="submit" (click)="signUp()" class="btn btn-success">Iniciar sesión</button>
                 </div>
                 <span>¿No tienes una cuenta? <a href="#" class="text-success">¡Regístrate ahora!</a></span>
             </form>

@@ -14,7 +14,6 @@ import { HeroesService } from '../../services/heroes.service';
 export class TabsComponent implements OnInit {
 
   inputValue: string = "";
-  options: Array<{ value: string; category: string; count: number }> = [];
   // Tab Super Heroes
   characters: Characters[] = [];
   charactersId: Characters[] = [];
