@@ -73,7 +73,7 @@ export class TabsComponent implements OnInit {
     //Ejecucón de func de mostrar imagenes
     this.comp.GetImagesLocalStorage();
     //Generación de modal
-    this.createModalSuccess('Super heroe removido','Este super heroe ya no hace parte de tu lista');
+    this.createModalSuccess('Super héroe removido','Este super héroe ya no hace parte de tu lista');
   }
 
   setLocalStorage(id: number) {
@@ -87,7 +87,7 @@ export class TabsComponent implements OnInit {
       //Envio de data a LS
       localStorage.setItem('charactersIdList', JSON.stringify(this.charactersIdList));
       //Generación de modal
-      this.createModalSuccess('Super heroe agregado','Este super heroe ahora hace parte de tu lista');
+      this.createModalSuccess('Super héroe agregado','Este super héroe ahora hace parte de tu lista');
       //Ejecucón de func de mostrar imagenes
       this.comp.GetImagesLocalStorage();
     }
@@ -95,8 +95,8 @@ export class TabsComponent implements OnInit {
   // Modals
   createModalError(): void {
     this._modal.error({
-      nzTitle: 'No puedes agregar este super herore',
-      nzContent: 'Este super heroe ya se encuentra en tu lista',
+      nzTitle: 'No puedes agregar este super héroe',
+      nzContent: 'Este super héroe ya se encuentra en tu lista.',
       nzClosable: false,
       nzOkText: 'Ok',
       nzOnOk: () => this._modal.closeAll()
