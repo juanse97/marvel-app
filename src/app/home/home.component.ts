@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void { }
-  //Consulta de imagenes de super heroes guardados
+  //Consulta de imagenes de super héroes guardados
   GetImagesLocalStorage() {
     this.images = localStorage.getItem("charactersIdList")
     this.images = JSON.parse(this.images)

@@ -4,7 +4,7 @@
         <section>
             <div class="row">
                 <div class="col-md-3">
-                    <h2 class="text-center">Super herores guardados</h2>
+                    <h2 class="text-center">Mis Super héroes</h2>
                     <div *ngFor="let image of imagesList">
                         <a (click)="showModal(image.id)">
                             <img class="image-heroe" [src]="image | images" [alt]="image.name" width="200px"

@@ -1,14 +1,17 @@
 <div class="container">
   <nz-tabset>
-    <nz-tab nzTitle="Super Heroes">
+    <!-- Super Héroes -->
+    <nz-tab nzTitle="Super Héroes">
       <div class="content-search">
-        <nz-input-group nzSearch [nzAddOnAfter]="suffixIconButton">
+        <!-- Busqueda -->
+        <nz-input-group class="input-search" nzSearch [nzAddOnAfter]="suffixIconButton">
           <input type="text" [(ngModel)]="inputValue" nz-input placeholder="Buscar por nombre" />
         </nz-input-group>
         <ng-template #suffixIconButton>
           <button nz-button nzType="primary" (click)="search()" nzSearch><i nz-icon nzType="search"
               nzTheme="outline"></i></button>
         </ng-template>
+        <button nz-button nzType="dashed" (click)="getCharacters()" nzSearch><i nz-icon nzType="clear" nzTheme="outline"></i></button>
       </div>
       <div class="content-result">
         <div class="card character mb-4" *ngFor="let character of charactersList" style="max-width: 97%;">
@@ -25,7 +28,7 @@
                 <p class="card-text"><small class="text-muted">Última actualización: {{character.modified | date:'medium'}}</small></p>
                 <a [href]="character.urls[1].url" target="_blank">Leer más</a>
                 <div class="content-btn">
-                  <button nz-button nzType="primary" (click)="add(character.id)" nzSearch><i nz-icon nzType="plus-circle" nzTheme="fill"></i>Agregar</button>
+                  <button nz-button nzType="primary" (click)="addCharacter(character.id)" nzSearch><i nz-icon nzType="plus-circle" nzTheme="fill"></i>Agregar</button>
                 </div>
               </div>
             </div>
@@ -33,7 +36,8 @@
         </div>
       </div>
     </nz-tab>
-    <nz-tab nzTitle="Super Heroes Guardados">
+    <!-- Tab Super Héroes Guardados -->
+    <nz-tab nzTitle="Super Héroes Guardados">
       <div class="content-result-save">
         <div class="mesagge">
           <h5 *ngIf="!charactersIdList.length" class="text-center">Aún no haz guardado ningun super heroe :(
@@ -50,6 +54,9 @@
                 <h5 class="card-title">{{character.name}}</h5>
                 <p class="card-text">{{character.description ? character.description : 'No hay descripción disponible'}}</p>
                 <p class="card-text"><small class="text-muted">Última actualización: {{character.modified | date:'medium'}}</small></p>
+                <div class="content-btn">
+                  <button nz-button nzType="primary" (click)="removeCharacter(character.id)" nzDanger><i nz-icon nzType="minus-circle" nzTheme="outline"></i>Quitar</button>
+                </div>
               </div>
             </div>
           </div>

@@ -10,8 +10,10 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { SearchOutline } from '@ant-design/icons-angular/icons';
 import { PlusCircleFill } from '@ant-design/icons-angular/icons';
+import { MinusCircleOutline } from '@ant-design/icons-angular/icons';
+import { ClearOutline } from '@ant-design/icons-angular/icons';
 import { IconDefinition } from '@ant-design/icons-angular';
-const icons: IconDefinition[] = [SearchOutline, PlusCircleFill];
+const icons: IconDefinition[] = [SearchOutline, PlusCircleFill, ClearOutline, MinusCircleOutline];
 
 
 import { ImagesPipe } from './pipes/images.pipe';

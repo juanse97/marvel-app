@@ -24,6 +24,10 @@ export class TabsComponent implements OnInit {
   charactersIdList: Characters[] = [];
   charactersId$: Subscription = new Subscription;
 
+  // Contenido Modal
+  title: string = "";
+  content: string = "";
+
 
   constructor(private _charactersService: HeroesService, private _modal: NzModalService, private comp: HomeComponent) { }
 
@@ -40,6 +44,7 @@ export class TabsComponent implements OnInit {
         this.characters = [...resp.data.results]
         this.charactersList = this.characters
       })
+    this.inputValue = "";
   }
   // Input search
   search() {
@@ -48,13 +53,27 @@ export class TabsComponent implements OnInit {
     this.charactersList = charactersFilter
   }
   // Boton guardar super heroe
-  add(id: number) {
+  addCharacter(id: number) {
     this.charactersId$ = this._charactersService
       .getCharactersId(id)
       .subscribe((resp: Welcome) => {
         this.charactersId = [...resp.data.results]
         this.setLocalStorage(id)
       })
+  }
+
+  //Boton quitar super heroe
+  removeCharacter(id: number) {
+    this.charactersIdList.forEach((element, i) => {
+      if (element.id === id)
+        this.charactersIdList.splice(i, 1)
+    });
+    //Envio de data a LS
+    localStorage.setItem('charactersIdList', JSON.stringify(this.charactersIdList));
+    //Ejecucón de func de mostrar imagenes
+    this.comp.GetImagesLocalStorage();
+    //Generación de modal
+    this.createModalSuccess('Super heroe removido','Este super heroe ya no hace parte de tu lista');
   }
 
   setLocalStorage(id: number) {
@@ -68,7 +87,7 @@ export class TabsComponent implements OnInit {
       //Envio de data a LS
       localStorage.setItem('charactersIdList', JSON.stringify(this.charactersIdList));
       //Generación de modal
-      this.createModalSuccess();
+      this.createModalSuccess('Super heroe agregado','Este super heroe ahora hace parte de tu lista');
       //Ejecucón de func de mostrar imagenes
       this.comp.GetImagesLocalStorage();
     }
@@ -84,10 +103,10 @@ export class TabsComponent implements OnInit {
     });
   }
 
-  createModalSuccess(): void {
+  createModalSuccess(tilte: string, content: string): void {
     this._modal.success({
-      nzTitle: 'Super heroe agregado',
-      nzContent: 'Este super heroe ahora hace parte de tu lista',
+      nzTitle: tilte,
+      nzContent: content,
       nzClosable: false,
       nzOkText: 'Ok',
       nzOnOk: () => this._modal.closeAll()
