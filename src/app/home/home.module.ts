@@ -18,13 +18,15 @@ import { ImagesPipe } from './pipes/images.pipe';
 
 import { HomeComponent } from './home.component';
 import { TabsComponent } from './components/tabs/tabs.component';
+import { NavComponent } from './components/nav/nav.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
     TabsComponent,
-    ImagesPipe
+    ImagesPipe,
+    NavComponent
   ],
   imports: [
     CommonModule,

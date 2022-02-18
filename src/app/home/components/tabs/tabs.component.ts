@@ -29,6 +29,7 @@ export class TabsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCharacters();
+    localStorage.removeItem('charactersIdList');
 
   }
 

@@ -2,7 +2,7 @@
     display: block;
     margin: 10px auto;
 }
-.buttons-modal{
+.buttons-modal {
     display: flex;
     justify-content: space-evenly;
     margin: 20px 0;
@@ -11,4 +11,12 @@
 .buttons-modal a {
     background-color: #1890ff;
     color: #ffff;
+}
+
+.list-comics {
+    padding: 0;
+    list-style: none;
+}
+.list-comics a {
+    text-decoration: none;
 }

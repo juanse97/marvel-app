@@ -1,3 +1,4 @@
+<app-nav></app-nav>
 <main role="main">
     <div class="container">
         <section>
@@ -32,7 +33,7 @@
         <h5>Despción</h5>
         <p>{{infomodalList.description ? infomodalList.description : 'No hay descripción disponible'}}</p>
         <h5>Comics</h5>
-        <ul>
+        <ul class="list-comics">
             <li *ngFor="let comic of infomodalList.comics.items">
                 <a [href]="comic.resourceURI">{{ comic.name}}</a>
             </li>

@@ -9,6 +9,26 @@
     display: flex;
     justify-content: flex-end;
 }
+.card.character {
+    display: block;
+    margin: auto;
+    -webkit-box-shadow: 1px 2px 12px 1px rgb(0 0 0 / 17%);
+    box-shadow: 1px 2px 12px 1px rgb(0 0 0 / 17%);
+}
+::ng-deep.ant-tabs > .ant-tabs-nav .ant-tabs-nav-wrap {
+    justify-content: center;
+    background-color: #f7f7f7;
+    color: black;
+}
+::ng-deep.ant-tabs-tab.ant-tabs-tab-active {
+    background-color: #fff;
+    padding: 12px;
+}
 ::ng-deep.ant-btn.ant-btn-primary i {
     display: inline-flex;
+}
+@media only screen and (max-width: 600px) {
+    ::ng-deep.ant-tabs-tab-btn {
+        font-size: 12px;
+    }
 }
